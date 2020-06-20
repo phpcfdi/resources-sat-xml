@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Combustible" elementFormDefault="qualified" xmlns:catCombustible="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Combustible" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="c_ClaveTipoCombustible">
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse"/>
+      <xs:enumeration value="1">
+        <xs:annotation>
+          <xs:documentation>Gasolina menor a 92 octanos</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="2">
+        <xs:annotation>
+          <xs:documentation>Gasolina mayor o igual a 92 octanos</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="3">
+        <xs:annotation>
+          <xs:documentation>Diesel</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="4">
+        <xs:annotation>
+          <xs:documentation>Diesel Marino</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="5">
+        <xs:annotation>
+          <xs:documentation>Otros</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

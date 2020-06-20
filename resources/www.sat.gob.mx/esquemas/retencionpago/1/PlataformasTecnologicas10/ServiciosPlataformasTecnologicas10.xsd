@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:plataformasTecnologicas="http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10" xmlns:tdCFDI="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:c_retenciones="http://www.sat.gob.mx/esquemas/retencionpago/1/catalogos" xmlns:CatPlataformasTecnologicas="http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10/catalogos" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.sat.gob.mx/esquemas/retencionpago/1/PlataformasTecnologicas10/catalogos" schemaLocation="catalogos/CatPlataformasTecnologicas.xsd"/>
+  <xs:import namespace="http://www.sat.gob.mx/esquemas/retencionpago/1/catalogos" schemaLocation="../catalogos/catRetenciones.xsd"/>
+  <xs:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" schemaLocation="../../../../sitio_internet/cfd/tipoDatos/tdCFDI/tdCFDI.xsd"/>
+  <xs:element name="ServiciosPlataformasTecnologicas">
+    <xs:annotation>
+      <xs:documentation>Complemento para expresar la información sobre la enajenación de bienes y los servicios prestados por personas físicas que utilicen plataformas tecnológicas.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Servicios">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido para detallar la información de operaciones celebradas por personas físicas que utilicen plataformas tecnológicas.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DetallesDelServicio" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido para detallar la información de la enajenación de bienes y los tipos de servicios realizadas por personas físicas utilizando plataformas tecnológicas.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ImpuestosTrasladadosdelServicio" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Nodo condicional para detallar la información de los impuestos trasladados respecto de las operaciones realizadas por personas físicas utilizando plataformas tecnológicas.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Base" use="required">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para señalar la base para el cálculo del impuesto, la determinación de la base se realiza de acuerdo con las disposiciones fiscales vigentes. No se permiten valores negativos.</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:decimal">
+                              <xs:fractionDigits value="6"/>
+                              <xs:minInclusive value="0.000001"/>
+                              <xs:pattern value="[0-9]{1,18}(.[0-9]{1,6})?"/>
+                              <xs:whiteSpace value="collapse"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="Impuesto" use="required" type="c_retenciones:c_TipoImpuesto">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para señalar la clave del tipo de impuesto trasladado aplicable al bien o servicio.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="TipoFactor" use="required" fixed="Tasa" type="xs:string">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para señalar la clave del tipo de factor que se aplica a la base del impuesto.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="TasaCuota" use="required" type="CatPlataformasTecnologicas:c_TasaCuota">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para señalar el valor de la tasa o cuota del impuesto que se traslada para el bien o servicio.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Importe" use="required" type="tdCFDI:t_Importe">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para señalar el importe del impuesto trasladado que aplica al bien o servicio. No se permiten valores negativos.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ContribucionGubernamental" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Nodo opcional para detallar la información de las contribuciones gubernamentales pagadas por los servicios realizados por personas físicas utilizando plataformas tecnológicas; por ejemplo, impuesto sobre hospedaje.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="ImpContrib" use="required" type="tdCFDI:t_Importe">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para registrar el importe de la contribución gubernamental pagada por los servicios realizados por personas físicas utilizando plataformas tecnológicas.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="EntidadDondePagaLaContribucion" use="required" type="c_retenciones:c_EntidadesFederativas">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para registrar la clave de la Entidad Federativa donde se efectúa el pago de la contribución gubernamental.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ComisionDelServicio" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>Nodo condicional para detallar la información de la comisión pagada por el uso de plataformas tecnológicas por cada servicio prestado o enajenación relacionado.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Base" use="optional">
+                          <xs:annotation>
+                            <xs:documentation>Atributo opcional para registrar la base de la comisión del servicio de la plataforma, pagadas por personas físicas utilizando plataformas tecnológicas.</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:decimal">
+                              <xs:fractionDigits value="6"/>
+                              <xs:minInclusive value="0.000001"/>
+                              <xs:pattern value="[0-9]{1,18}(.[0-9]{1,6})?"/>
+                              <xs:whiteSpace value="collapse"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="Porcentaje" use="optional">
+                          <xs:annotation>
+                            <xs:documentation>Atributo opcional para detallar el valor del porcentaje cobrado por la comisión del uso del servicio de las plataformas tecnológicas.</xs:documentation>
+                          </xs:annotation>
+                          <xs:simpleType>
+                            <xs:restriction base="xs:decimal">
+                              <xs:minInclusive value="0.001"/>
+                              <xs:maxInclusive value="1.0"/>
+                              <xs:fractionDigits value="3"/>
+                              <xs:whiteSpace value="collapse"/>
+                            </xs:restriction>
+                          </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="Importe" use="required" type="tdCFDI:t_Importe">
+                          <xs:annotation>
+                            <xs:documentation>Atributo requerido para detallar el valor del importe cobrado por la comisión del uso del servicio de las plataformas tecnológicas.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="FormaPagoServ" use="required" type="CatPlataformasTecnologicas:c_FormaPagoServ">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para expresar la clave de la forma de pago con la que se liquida el servicio prestado o la enajenación de bienes.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="TipoDeServ" use="required" type="CatPlataformasTecnologicas:c_TipoDeServ">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para expresar la clave del tipo de servicio prestado o la enajenación de bienes, según corresponda.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="SubTipServ" use="optional" type="CatPlataformasTecnologicas:c_SubTipoServ">
+                    <xs:annotation>
+                      <xs:documentation>Atributo condicional para identificar el subtipo del servicio prestado.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="RFCTerceroAutorizado" use="optional" type="tdCFDI:t_RFC_PF">
+                    <xs:annotation>
+                      <xs:documentation>Atributo opcional para registrar el RFC del tercero autorizado como personal de apoyo, por quien está registrado en la plataforma tecnológica para prestar servicios o en su caso,  enajenar bienes.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="FechaServ" use="required" type="tdCFDI:t_Fecha">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para expresar la fecha en la que el cliente paga el servicio o el bien.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="PrecioServSinIVA" use="required" type="tdCFDI:t_Importe">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para expresar el precio del bien o servicio (sin incluir IVA).</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" use="required" fixed="1.0">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido con valor prefijado que indica la versión del complemento Servicios de Plataformas Tecnológicas.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="Periodicidad" use="required" type="c_retenciones:c_Periodicidad">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para especificar el periodo de retención.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="NumServ" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el número de operaciones celebradas por concepto de servicios o enajenación de bienes realizadas en el periodo.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="MonTotServSIVA" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar monto total de las operaciones realizadas en el periodo, sin incluir el monto del IVA; según corresponda.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TotalIVATrasladado" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el monto total del IVA trasladado por las operaciones realizadas en el periodo.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TotalIVARetenido" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el monto total del IVA retenido por las operaciones realizadas en el periodo.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="TotalISRRetenido" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el monto total del ISR retenido por las operaciones realizadas en el periodo.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="DifIVAEntregadoPrestServ" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar la diferencia del IVA entregado al prestador del servicio o enajenante de bienes en el periodo.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="MonTotalporUsoPlataforma" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el monto total cobrado al prestador del servicio o enajenante de bienes por el uso de la plataforma en el periodo.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="MonTotalContribucionGubernamental" use="optional" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo condicional para expresar la suma de los atributos “ImpContrib“ del nodo hijo “ContribucionGubernamental” del periodo que corresponda.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
