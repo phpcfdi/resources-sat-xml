@@ -16,3 +16,9 @@ Las ubicaciones de los archivos XSD de Timbre Fiscal Digital versiones 1.0 y 1.1
 
 - Se corrige el uso del comando `zip -j` en las instrucciones de uso, no se debe usar `-j`.
 - Se agrega el archivo de tareas pendientes [TODO](TODO.md).
+- Revertir el último cambio, las ubicaciones eran correctas.
+
+```text
+resources/www.sat.gob.mx/sitio_internet/cfd/{TimbreFiscalDigital => timbrefiscaldigital}/TimbreFiscalDigitalv11.xsd
+resources/www.sat.gob.mx/sitio_internet/{TimbreFiscalDigital => timbrefiscaldigital}/TimbreFiscalDigital.xsd
+```
