@@ -11,3 +11,14 @@ Esta versión inicial ha sido muy problemática de generar debido a que la infre
 ## 2020-06-19 Ya, en serio
 
 Las ubicaciones de los archivos XSD de Timbre Fiscal Digital versiones 1.0 y 1.1 tenían establecido en forma incorrecta la dirección por uso de mayúsculas y minúsculas, se corrigieron tomándolas directamente de la información del Anexo 20 versiones de CFDI 3.3 y 3.2.
+
+## 2020-06-22 Primer intento de actualización automática
+
+- Se corrige el uso del comando `zip -j` en las instrucciones de uso, no se debe usar `-j`.
+- Se agrega el archivo de tareas pendientes [TODO](TODO.md).
+- Revertir el último cambio, las ubicaciones eran correctas.
+
+```text
+resources/www.sat.gob.mx/sitio_internet/cfd/{TimbreFiscalDigital => timbrefiscaldigital}/TimbreFiscalDigitalv11.xsd
+resources/www.sat.gob.mx/sitio_internet/{TimbreFiscalDigital => timbrefiscaldigital}/TimbreFiscalDigital.xsd
+```
