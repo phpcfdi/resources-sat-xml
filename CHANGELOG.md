@@ -15,3 +15,4 @@ Las ubicaciones de los archivos XSD de Timbre Fiscal Digital versiones 1.0 y 1.1
 ## 2020-06-22 Primer intento de actualización automática
 
 - Se corrige el uso del comando `zip -j` en las instrucciones de uso, no se debe usar `-j`.
+- Se agrega el archivo de tareas pendientes [TODO](TODO.md).
