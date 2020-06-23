@@ -22,7 +22,7 @@ Si deseas obtener los archivos directamente de este repositorio puedes ejecutar:
 # download latest archive from github as resources-sat-xml.zip
 wget -O resources-sat-xml.zip https://github.com/phpcfdi/resources-sat-xml/archive/master.zip
 # unzip the "resources" folder contents and place then into my-resources
-unzip -j resources-sat-xml.zip 'resources-sat-xml-master/resources/*' -d my-resources
+unzip resources-sat-xml.zip 'resources-sat-xml-master/resources/*' -d my-resources
 # remove resources-sat-xml.zip
 rm resources-sat-xml.zip
 ```
