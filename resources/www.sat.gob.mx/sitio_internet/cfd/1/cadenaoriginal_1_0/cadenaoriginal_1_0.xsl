@@ -93,4 +93,4 @@
 	
 <xsl:template name="rtrim"><xsl:param name="s"/><xsl:param name="i" select="string-length($s)"/><xsl:choose><xsl:when test="translate(substring($s,$i,1),' &#9;&#10;&#13;','')"><xsl:value-of select="substring($s,1,$i)"/></xsl:when><xsl:when test="$i&lt;2"/><xsl:otherwise><xsl:call-template name="rtrim"><xsl:with-param name="s" select="$s"/><xsl:with-param name="i" select="$i - 1"/></xsl:call-template></xsl:otherwise></xsl:choose></xsl:template>
 	
-</xsl:stylesheet>
+</xsl:stylesheet>

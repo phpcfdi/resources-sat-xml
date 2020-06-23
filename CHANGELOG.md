@@ -22,3 +22,7 @@ Las ubicaciones de los archivos XSD de Timbre Fiscal Digital versiones 1.0 y 1.1
 resources/www.sat.gob.mx/sitio_internet/cfd/{TimbreFiscalDigital => timbrefiscaldigital}/TimbreFiscalDigitalv11.xsd
 resources/www.sat.gob.mx/sitio_internet/{TimbreFiscalDigital => timbrefiscaldigital}/TimbreFiscalDigital.xsd
 ```
+
+## 2020-06-23 phpcfdi/resources-sat-xml-generator:v1.0.0 
+
+Actualización automática con fecha mar jun 23 18:50:50 CDT 2020
