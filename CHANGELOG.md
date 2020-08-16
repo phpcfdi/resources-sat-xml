@@ -26,7 +26,3 @@ resources/www.sat.gob.mx/sitio_internet/{TimbreFiscalDigital => timbrefiscaldigi
 ## 2020-06-23 phpcfdi/resources-sat-xml-generator:v1.0.0 
 
 Actualización automática con fecha mar jun 23 18:50:50 CDT 2020
-
-## 2020-08-15 phpcfdi/resources-sat-xml-generator:latest 
-
-Actualización automática con fecha sáb 15 ago 2020 23:38:25 CDT

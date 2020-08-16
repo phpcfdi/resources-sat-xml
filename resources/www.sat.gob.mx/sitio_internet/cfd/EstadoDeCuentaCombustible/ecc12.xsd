@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ecc12="http://www.sat.gob.mx/EstadoDeCuentaCombustible12" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tdCFDI="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" xmlns:catCombustible="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Combustible" targetNamespace="http://www.sat.gob.mx/EstadoDeCuentaCombustible12" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" schemaLocation="../tipoDatos/tdCFDI/tdCFDI.xsd"/>
+  <xs:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/Combustible" schemaLocation="../catalogos/Combustible/catCombustible.xsd"/>
+  <xs:element name="EstadoDeCuentaCombustible">
+    <xs:annotation>
+      <xs:documentation>Complemento para el Comprobante Fiscal Digital por Internet (CFDI) para integrar la información aplicable al estado de cuenta emitido por un prestador de servicios de monedero electrónico </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Conceptos">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido para enlistar los conceptos cubiertos por Estado de Cuenta de Combustible.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ConceptoEstadoDeCuentaCombustible" maxOccurs="unbounded">
+                <xs:annotation>
+                  <xs:documentation>Nodo requerido para la expresión de una transacción a ser reportada en el estado de cuenta del proveedor de monedero electrónico para operaciones de compra de combustibles.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Traslados">
+                      <xs:annotation>
+                        <xs:documentation>Nodo requerido para enlistar los impuestos trasladados aplicables de combustibles.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Traslado" maxOccurs="unbounded">
+                            <xs:annotation>
+                              <xs:documentation>Nodo para la definición de información detallada de un traslado de impuesto específico.</xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                              <xs:attribute name="Impuesto" use="required">
+                                <xs:annotation>
+                                  <xs:documentation>Atributo requerido para definir el tipo de impuesto trasladado.</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:string">
+                                    <xs:whiteSpace value="collapse"/>
+                                    <xs:enumeration value="IVA">
+                                      <xs:annotation>
+                                        <xs:documentation>Impuesto al Valor Agregado</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:enumeration>
+                                    <xs:enumeration value="IEPS">
+                                      <xs:annotation>
+                                        <xs:documentation>Impuesto especial sobre productos y servicios</xs:documentation>
+                                      </xs:annotation>
+                                    </xs:enumeration>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="TasaOCuota" use="required">
+                                <xs:annotation>
+                                  <xs:documentation>Atributo requerido para señalar la tasa o la cuota del impuesto que se traslada por cada concepto amparado en el comprobante. Cuando se registre un porcentaje, por ejemplo 16%, debe expresarse como 0.16 y no como 16.00</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:decimal">
+                                    <xs:fractionDigits value="6"/>
+                                    <xs:whiteSpace value="collapse"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                              <xs:attribute name="Importe" use="required">
+                                <xs:annotation>
+                                  <xs:documentation>Atributo requerido para definir el importe o monto del impuesto trasladado.</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                  <xs:restriction base="xs:decimal">
+                                    <xs:fractionDigits value="2"/>
+                                    <xs:whiteSpace value="collapse"/>
+                                    <xs:minInclusive value="0.01"/>
+                                    <xs:pattern value="[0-9]{1,14}(.([0-9]{1,2}))"/>
+                                  </xs:restriction>
+                                </xs:simpleType>
+                              </xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Identificador" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para la expresión del identificador o número del monedero electrónico.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:minLength value="1"/>
+                        <xs:whiteSpace value="collapse"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Fecha" type="tdCFDI:t_FechaH" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para la expresión de la Fecha y hora de expedición de la operación reportada. Se expresa en la forma aaaa-mm-ddThh:mm:ss, de acuerdo con la especificación ISO 8601.<xs:minInclusive value="2015-01-01T00:00:00"/>
+                      </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="Rfc" use="required" type="tdCFDI:t_RFC">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido del RFC del enajenante del combustible.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="ClaveEstacion" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para expresar la clave de cliente de la estación de servicio, a 10 caracteres.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="10"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Cantidad" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para definir el volumen de combustible adquirido.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:minInclusive value="0.001"/>
+                        <xs:fractionDigits value="3"/>
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:pattern value="[0-9]{1,14}(.([0-9]{1,3}))"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="TipoCombustible" type="catCombustible:c_ClaveTipoCombustible" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para indicar la clave del tipo de combustible.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="Unidad" use="optional">
+                    <xs:annotation>
+                      <xs:documentation>Atributo condicional para precisar la unidad de medida.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="25"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="NombreCombustible" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para expresar el nombre del combustible adquirido.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="300"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="FolioOperacion" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para referir el número de folio de cada operación realizada por cada monedero electrónico.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:minLength value="1"/>
+                        <xs:maxLength value="50"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="ValorUnitario" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para definir el precio unitario del combustible adquirido.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:minInclusive value="0.001"/>
+                        <xs:fractionDigits value="3"/>
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:pattern value="[0-9]{1,14}(.([0-9]{1,3}))"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Importe" use="required">
+                    <xs:annotation>
+                      <xs:documentation>Atributo requerido para definir el monto total de consumo de combustible. Debe ser equivalente al resultado de multiplicar la cantidad por el valor unitario, redondeado a centésimas.</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:decimal">
+                        <xs:fractionDigits value="2"/>
+                        <xs:whiteSpace value="collapse"/>
+                        <xs:pattern value="[0-9]{1,14}(.([0-9]{1,2}))"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" use="required" fixed="1.2">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que indica la versión del complemento.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="TipoOperacion" use="required" fixed="Tarjeta">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el tipo de operación de acuerdo con el medio de pago.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroDeCuenta" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el número de cuenta del adquirente del monedero electrónico</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="SubTotal" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para representar la suma de todos los importes tipo ConceptoEstadoDeCuentaCombustible.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[0-9]{1,14}(.([0-9]{1,2}))"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Total" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el monto total de consumo de combustible.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2"/>
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[0-9]{1,14}(.([0-9]{1,2}))"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
