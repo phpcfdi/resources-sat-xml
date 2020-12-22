@@ -9,6 +9,9 @@
       <xs:enumeration value="04"/>
       <xs:enumeration value="05"/>
       <xs:enumeration value="06"/>
+      <xs:enumeration value="07"/>
+      <xs:enumeration value="08"/>
+      <xs:enumeration value="09"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="c_SubTipoServ">
