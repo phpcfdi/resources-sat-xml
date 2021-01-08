@@ -24613,7 +24613,8 @@
       <xs:enumeration value="19"/>
       <xs:enumeration value="20"/>
       <xs:enumeration value="21"/>
-      <xs:enumeration value="99"/>
+	  <xs:enumeration value="22"/>
+	  <xs:enumeration value="99"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
