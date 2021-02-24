@@ -16331,6 +16331,7 @@
       <xs:enumeration value="3002200700"/>
       <xs:enumeration value="3002200800"/>
       <xs:enumeration value="3002200900"/>
+	  <xs:enumeration value="3002201000"/>
       <xs:enumeration value="3002209901"/>
       <xs:enumeration value="3002209902"/>
       <xs:enumeration value="3002209903"/>
@@ -20984,6 +20985,8 @@
       <xs:enumeration value="7612900100"/>
       <xs:enumeration value="7612909900"/>
       <xs:enumeration value="7613000100"/>
+	  <xs:enumeration value="7613000200"/>
+	  <xs:enumeration value="7613009900"/>
       <xs:enumeration value="7614100101"/>
       <xs:enumeration value="7614100191"/>
       <xs:enumeration value="7614100199"/>
