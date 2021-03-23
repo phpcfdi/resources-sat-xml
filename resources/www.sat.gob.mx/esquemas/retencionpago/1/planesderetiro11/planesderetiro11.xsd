@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:planesderetiro11="http://www.sat.gob.mx/esquemas/retencionpago/1/planesderetiro11" xmlns:CatPlanesderetiro="http://www.sat.gob.mx/esquemas/retencionpago/1/planesderetiro11/catalogos" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sat.gob.mx/esquemas/retencionpago/1/planesderetiro11" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.sat.gob.mx/esquemas/retencionpago/1/planesderetiro11/catalogos" schemaLocation="catalogos/CatPlanesderetiro.xsd"/>
+  <xs:element name="Planesderetiro">
+    <xs:annotation>
+      <xs:documentation>Complemento para expresar la información sobre los planes personales de retiro</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AportacionesODepositos" minOccurs="0" maxOccurs="3">
+          <xs:annotation>
+            <xs:documentation>Nodo para identificar el tipo de aportación o depósito que realiza el aportante a su plan de retiro, conforme a los artículos 151, 185 de la Ley el Impuesto sobre la Renta, y 258 del Reglamento de la Ley del Impuesto Sobre la Renta.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="TipoAportacionODeposito" type="CatPlanesderetiro:c_TipoAportODep" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido que identifica el tipo de aportación o depósito que se realiza al plan de retiro.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="MontAportODep" type="planesderetiro11:t_Importe" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido que expresa el monto de las aportaciones o depósitos efectuados al plan de retiro.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RFCFiduciaria" type="planesderetiro11:t_RFC" use="optional">
+              <xs:annotation>
+                <xs:documentation>Atributo opcional que expresa el RFC de la fiduciaria de fungió como administrador del plan de pensiones, cuando se trate de aportaciones realizadas de conformidad con el artículo 258 del Reglamento de la LISR, se vuelve requerido cuando el administrador del plan es una fiduciaria.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" use="required" fixed="1.1">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido con valor prefijado que indica la versión del complemento de planes personales de retiro</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="SistemaFinanc" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar si los planes personales de retiro son del sistema financiero</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:enumeration value="SI"/>
+            <xs:enumeration value="NO"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="MontTotAportAnioInmAnterior" type="planesderetiro11:t_Importe" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que expresa el monto total de las aportaciones actualizadas en el año inmediato anterior de los planes personales de retiro</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="MontIntRealesDevengAniooInmAnt" type="planesderetiro11:t_Importe" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el  monto de los intereses reales devengados o percibidos durante el año inmediato anterior de los planes personales de retiro</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="HuboRetirosAnioInmAntPer" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar si se realizaron retiros de recursos invertidos y sus rendimientos en el ejercicio inmediato anterior antes de cumplir los requisitos de permanencia </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:enumeration value="SI"/>
+            <xs:enumeration value="NO"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="MontTotRetiradoAnioInmAntPer" type="planesderetiro11:t_Importe" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo condicional que expresa el monto total del retiro realizado antes de cumplir con los requisitos de permanencia</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="MontTotExentRetiradoAnioInmAnt" type="planesderetiro11:t_Importe" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo condicional que expresa el  monto total exento del retiro realizado en el ejercicio inmediato anterior</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="MontTotExedenteAnioInmAnt" type="planesderetiro11:t_Importe" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo condicional que expresa  el monto total excedente del monto exento del retiro realizado en el ejercicio inmediato anterior</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="HuboRetirosAnioInmAnt" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que expresa si se realizaron retiros en el ejercicio inmediato anterior</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="SI"/>
+            <xs:enumeration value="NO"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="MontTotRetiradoAnioInmAnt" type="planesderetiro11:t_Importe" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que expresa el monto total de retiros realizados en el ejercicio inmediato anterior</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="NumReferencia" use="optional">
+        <xs:annotation>
+          <xs:documentation>Atributo opcional que expresa el número de referencia, contrato o cuenta con la que identifica la institución a su cliente.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+            <xs:minLength value="1"/>
+            <xs:maxLength value="300"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="t_Importe">
+    <xs:annotation>
+      <xs:documentation>Tipo definido para expresar importes numéricos con fracción hasta seis decimales</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:decimal">
+      <xs:fractionDigits value="6"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="t_RFC">
+    <xs:annotation>
+      <xs:documentation>Tipo definido para expresar claves del Registro Federal de Contribuyentes.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="12"/>
+      <xs:maxLength value="13"/>
+      <xs:pattern value="[A-Z&amp;Ñ]{3,4}[0-9]{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])[A-Z0-9]{2}[0-9A]"/>
+      <xs:whiteSpace value="collapse"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
