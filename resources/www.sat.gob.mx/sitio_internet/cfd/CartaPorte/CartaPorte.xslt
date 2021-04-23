@@ -563,7 +563,7 @@
     </xsl:call-template>
     <xsl:call-template name="Requerido">
       <xsl:with-param name="valor" select="./@KilometrajePagado" />
-    </xsl:call-template>>
+    </xsl:call-template>
   </xsl:template>
   
   <!--  Iniciamos el manejo de los elementos hijo en la secuencia Carro-->
