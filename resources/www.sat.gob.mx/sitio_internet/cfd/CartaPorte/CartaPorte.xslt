@@ -453,24 +453,21 @@
 	
     <!--  Iniciamos el tratamiento de los atributos de cartaporte:Contenedor-->
     <xsl:for-each select="./cartaporte:Contenedor">
-      <xsl:apply-templates select="."/>
+    <!--  Iniciamos el manejo de los elementos hijo en la secuencia Contenedor-->
+      <!--  Iniciamos el manejo de los nodos dependientes -->
+      <xsl:call-template name="Requerido">
+        <xsl:with-param name="valor" select="./@MatriculaContenedor" />
+      </xsl:call-template>
+      <xsl:call-template name="Requerido">
+        <xsl:with-param name="valor" select="./@TipoContenedor" />
+      </xsl:call-template>
+  	<xsl:call-template name="Opcional">
+        <xsl:with-param name="valor" select="./@NumPrecinto" />
+      </xsl:call-template>
     </xsl:for-each>
 
   </xsl:template>
   
-  <!--  Iniciamos el manejo de los elementos hijo en la secuencia Contenedor-->
-  <xsl:template match="cartaporte:Contenedor">
-    <!--  Iniciamos el manejo de los nodos dependientes -->
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@MatriculaContenedor" />
-    </xsl:call-template>
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@TipoContenedor" />
-    </xsl:call-template>
-	<xsl:call-template name="Opcional">
-      <xsl:with-param name="valor" select="./@NumPrecinto" />
-    </xsl:call-template>
-  </xsl:template>
   
   <!--  Iniciamos el manejo de los elementos hijo en la secuencia TransporteAereo-->
   <xsl:template match="cartaporte:TransporteAereo">
@@ -584,24 +581,24 @@
     
 	<!--  Iniciamos el tratamiento de los atributos de cartaporte:Contenedor -->
     <xsl:for-each select="./cartaporte:Contenedor ">
-      <xsl:apply-templates select="."/>
+      <!--  Iniciamos el manejo de los elementos hijo en la secuencia Contenedor-->
+      
+
+        <!--  Iniciamos el manejo de los nodos dependientes -->
+        <xsl:call-template name="Requerido">
+          <xsl:with-param name="valor" select="./@TipoContenedor" />
+        </xsl:call-template>
+        <xsl:call-template name="Requerido">
+          <xsl:with-param name="valor" select="./@PesoContenedorVacio" />
+        </xsl:call-template>
+    	<xsl:call-template name="Requerido">
+          <xsl:with-param name="valor" select="./@PesoNetoMercancia" />
+        </xsl:call-template>
+
     </xsl:for-each>
 	
   </xsl:template>
   
-  <!--  Iniciamos el manejo de los elementos hijo en la secuencia Contenedor-->
-  <xsl:template match="cartaporte:Contenedor">
-    <!--  Iniciamos el manejo de los nodos dependientes -->
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@TipoContenedor" />
-    </xsl:call-template>
-    <xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@PesoContenedorVacio" />
-    </xsl:call-template>
-	<xsl:call-template name="Requerido">
-      <xsl:with-param name="valor" select="./@PesoNetoMercancia" />
-    </xsl:call-template>
-  </xsl:template>
   
   
   <xsl:template match="cartaporte:FiguraTransporte">
