@@ -3791,6 +3791,7 @@
 	<xs:simpleType name="c_ClaveProdServCP">
 		<xs:restriction base="xs:string">
 			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01010101"/>
 			<xs:enumeration value="10101500"/>
 			<xs:enumeration value="10101501"/>
 			<xs:enumeration value="10101502"/>
@@ -18587,15 +18588,15 @@
 			<xs:enumeration value="42261613"/>
 			<xs:enumeration value="42261800"/>
 			<xs:enumeration value="42261801"/>
+			<xs:enumeration value="42261805"/>
+			<xs:enumeration value="42261806"/>
+			<xs:enumeration value="42261807"/>
+			<xs:enumeration value="42261809"/>
+			<xs:enumeration value="42261810"/>
 			<xs:enumeration value="42261902"/>
 			<xs:enumeration value="42261903"/>
 			<xs:enumeration value="42261904"/>
-			<xs:enumeration value="42261905"/>
-			<xs:enumeration value="42261906"/>
-			<xs:enumeration value="42261907"/>
-			<xs:enumeration value="42261908"/>
-			<xs:enumeration value="42261909"/>
-			<xs:enumeration value="42261910"/>
+			<xs:enumeration value="42262008"/>
 			<xs:enumeration value="42271500"/>
 			<xs:enumeration value="42271501"/>
 			<xs:enumeration value="42271502"/>
@@ -18680,7 +18681,7 @@
 			<xs:enumeration value="42272007"/>
 			<xs:enumeration value="42272008"/>
 			<xs:enumeration value="42272009"/>
-			<xs:enumeration value="42272010"/>
+			<xs:enumeration value="42272011"/>
 			<xs:enumeration value="42272016"/>
 			<xs:enumeration value="42272017"/>
 			<xs:enumeration value="42272200"/>
@@ -18747,7 +18748,6 @@
 			<xs:enumeration value="42281517"/>
 			<xs:enumeration value="42281518"/>
 			<xs:enumeration value="42281519"/>
-			<xs:enumeration value="42281520"/>
 			<xs:enumeration value="42281521"/>
 			<xs:enumeration value="42281522"/>
 			<xs:enumeration value="42281523"/>
@@ -19221,7 +19221,6 @@
 			<xs:enumeration value="42295470"/>
 			<xs:enumeration value="42295471"/>
 			<xs:enumeration value="42295500"/>
-			<xs:enumeration value="42295501"/>
 			<xs:enumeration value="42295502"/>
 			<xs:enumeration value="42295503"/>
 			<xs:enumeration value="42295505"/>
@@ -34925,11 +34924,13 @@
 			<xs:enumeration value="TPAF17"/>
 			<xs:enumeration value="TPAF18"/>
 			<xs:enumeration value="TPAF19"/>
+			<xs:enumeration value="TPAF20"/>
 			<xs:enumeration value="TPTM01"/>
 			<xs:enumeration value="TPTA01"/>
 			<xs:enumeration value="TPTA02"/>
 			<xs:enumeration value="TPTA03"/>
 			<xs:enumeration value="TPTA04"/>
+			<xs:enumeration value="TPXX00"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_ConfigAutotransporte">
