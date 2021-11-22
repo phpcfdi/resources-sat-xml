@@ -42766,6 +42766,10 @@
 			<xs:enumeration value="CA154"/>
 			<xs:enumeration value="CA155"/>
 			<xs:enumeration value="CA156"/>
+			<xs:enumeration value="CA157"/>
+			<xs:enumeration value="CA158"/>
+			<xs:enumeration value="CA159"/>
+			<xs:enumeration value="CA160"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_ClaveProdSTCC">
