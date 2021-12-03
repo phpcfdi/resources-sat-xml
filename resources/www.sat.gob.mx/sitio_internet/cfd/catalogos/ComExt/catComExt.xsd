@@ -20374,6 +20374,7 @@
 			<xs:enumeration value="7225300705"/>
 			<xs:enumeration value="7225300706"/>
 			<xs:enumeration value="7225300707"/>
+			<xs:enumeration value="7225300708"/>
 			<xs:enumeration value="7225300791"/>
 			<xs:enumeration value="7225300792"/>
 			<xs:enumeration value="7225300799"/>
@@ -20399,6 +20400,7 @@
 			<xs:enumeration value="7225500710"/>
 			<xs:enumeration value="7225500711"/>
 			<xs:enumeration value="7225500791"/>
+			<xs:enumeration value="7225500792"/>
 			<xs:enumeration value="7225500799"/>
 			<xs:enumeration value="7225910100"/>
 			<xs:enumeration value="7225920101"/>
@@ -20643,6 +20645,7 @@
 			<xs:enumeration value="7306610101"/>
 			<xs:enumeration value="7306610102"/>
 			<xs:enumeration value="7306610103"/>
+			<xs:enumeration value="7306610191"/>
 			<xs:enumeration value="7306610199"/>
 			<xs:enumeration value="7306699901"/>
 			<xs:enumeration value="7306699902"/>
