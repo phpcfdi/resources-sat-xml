@@ -14112,6 +14112,15 @@
 			<xs:enumeration value="0709600300"/>
 			<xs:enumeration value="0709600400"/>
 			<xs:enumeration value="0709609900"/>
+			<xs:enumeration value="0709609901"/>
+			<xs:enumeration value="0709609902"/>
+			<xs:enumeration value="0709609903"/>
+			<xs:enumeration value="0709609904"/>
+			<xs:enumeration value="0709609905"/>
+			<xs:enumeration value="0709609906"/>
+			<xs:enumeration value="0709609907"/>
+			<xs:enumeration value="0709609908"/>
+			<xs:enumeration value="0709609999"/>
 			<xs:enumeration value="0709700100"/>
 			<xs:enumeration value="0709910100"/>
 			<xs:enumeration value="0709920100"/>
@@ -14208,6 +14217,9 @@
 			<xs:enumeration value="0804500403"/>
 			<xs:enumeration value="0804500500"/>
 			<xs:enumeration value="0804509900"/>
+			<xs:enumeration value="0804509901"/>
+			<xs:enumeration value="0804509902"/>
+			<xs:enumeration value="0804509903"/>
 			<xs:enumeration value="0805100100"/>
 			<xs:enumeration value="0805210100"/>
 			<xs:enumeration value="0805220100"/>
@@ -14265,6 +14277,8 @@
 			<xs:enumeration value="0901110400"/>
 			<xs:enumeration value="0901110500"/>
 			<xs:enumeration value="0901119900"/>
+			<xs:enumeration value="0901119901"/>
+			<xs:enumeration value="0901119999"/>
 			<xs:enumeration value="0901120100"/>
 			<xs:enumeration value="0901120200"/>
 			<xs:enumeration value="0901120300"/>
@@ -14354,6 +14368,8 @@
 			<xs:enumeration value="1006300299"/>
 			<xs:enumeration value="1006300300"/>
 			<xs:enumeration value="1006309900"/>
+			<xs:enumeration value="1006309901"/>
+			<xs:enumeration value="1006309999"/>
 			<xs:enumeration value="1006400100"/>
 			<xs:enumeration value="1006400200"/>
 			<xs:enumeration value="1006409900"/>
@@ -14870,6 +14886,8 @@
 			<xs:enumeration value="2208900100"/>
 			<xs:enumeration value="2208900200"/>
 			<xs:enumeration value="2208900300"/>
+			<xs:enumeration value="2208900301"/>
+			<xs:enumeration value="2208900391"/>
 			<xs:enumeration value="2208900400"/>
 			<xs:enumeration value="2208900500"/>
 			<xs:enumeration value="2208900600"/>
@@ -19879,6 +19897,8 @@
 			<xs:enumeration value="6912000299"/>
 			<xs:enumeration value="6912000300"/>
 			<xs:enumeration value="6912009900"/>
+			<xs:enumeration value="6912009901"/>
+			<xs:enumeration value="6912009999"/>
 			<xs:enumeration value="6913100100"/>
 			<xs:enumeration value="6913900100"/>
 			<xs:enumeration value="6913909900"/>
