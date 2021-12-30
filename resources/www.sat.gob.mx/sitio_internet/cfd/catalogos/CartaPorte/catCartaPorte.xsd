@@ -42494,6 +42494,7 @@
 			<xs:enumeration value="CM007"/>
 			<xs:enumeration value="CM008"/>
 			<xs:enumeration value="CM009"/>
+			<xs:enumeration value="CM010"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_NumAutorizacionNaviero">

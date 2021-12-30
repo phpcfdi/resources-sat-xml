@@ -818,10 +818,10 @@
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:string">
-												<xs:minLength value="6"/>
-												<xs:maxLength value="7"/>
+												<xs:minLength value="7"/>
+												<xs:maxLength value="30"/>
 												<xs:whiteSpace value="collapse"/>
-												<xs:pattern value="[^|]{6,7}"/>
+												<xs:pattern value="[^|]{7,30}"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>

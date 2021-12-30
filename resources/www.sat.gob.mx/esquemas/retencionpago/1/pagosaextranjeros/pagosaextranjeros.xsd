@@ -14,7 +14,7 @@
 					<xs:complexType>
 						<xs:attribute name="PaisDeResidParaEfecFisc" type="c_retenciones:c_Pais" use="required">
 							<xs:annotation>
-								<xs:documentation>Atributo requerido para expresar la clave del país de residencia del extranjero, conforme al catálogo de países publicado en el Anexo 10 de la RMF. </xs:documentation>
+								<xs:documentation>Atributo requerido para expresar la clave del país de residencia del extranjero, conforme al catálogo. </xs:documentation>
 							</xs:annotation>
 						</xs:attribute>
 						<xs:attribute name="ConceptoPago" type="c_retenciones:c_TipoContribuyenteSujetoRetencion" use="required">
