@@ -24664,6 +24664,15 @@
 			<xs:enumeration value="9806000900"/>
 			<xs:enumeration value="9806001000"/>
 			<xs:enumeration value="9807000100"/>
+			<xs:enumeration value="9901000100"/>
+			<xs:enumeration value="9901000200"/>
+			<xs:enumeration value="9901000500"/>
+			<xs:enumeration value="9901001100"/>
+			<xs:enumeration value="9901001200"/>
+			<xs:enumeration value="9901001300"/>
+			<xs:enumeration value="9901001500"/>
+			<xs:enumeration value="9901001600"/>
+			<xs:enumeration value="9902000100"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_UnidadAduana">
