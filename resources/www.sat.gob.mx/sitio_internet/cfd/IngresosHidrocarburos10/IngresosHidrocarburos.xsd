@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ieeh="http://www.sat.gob.mx/IngresosHidrocarburos10" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:catCEH="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/hidrocarburos" xmlns:tdCFDI="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" targetNamespace="http://www.sat.gob.mx/IngresosHidrocarburos10" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/hidrocarburos" schemaLocation="../catalogos/hidrocarburos/catHidrocarburos.xsd"/>
+  <xs:import namespace="http://www.sat.gob.mx/sitio_internet/cfd/tipoDatos/tdCFDI" schemaLocation="../tipoDatos/tdCFDI/tdCFDI.xsd"/>
+  <xs:element name="IngresosHidrocarburos">
+    <xs:annotation>
+      <xs:documentation>Complemento para incorporar la información sobre Ingresos atribuibles a los Integrantes de un consorcio derivados de la contraprestación de un contrato de exploración o extracción de hidrocarburos.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="DocumentoRelacionado" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Nodo requerido para expresar la información del documento relacionado al ingreso.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:attribute name="FolioFiscalVinculado" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido para expresar el folio fiscal del CFDI expedido por el operador del consorcio al FMP.</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:length value="36"/>
+                  <xs:whiteSpace value="collapse"/>
+                  <xs:pattern value="[a-f0-9A-F]{8}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{4}-[a-f0-9A-F]{12}"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="FechaFolioFiscalVinculado" use="required">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido para expresar la fecha del CFDI  expedido por el operador del consorcio al FMP. Se expresa en la forma aaaa-mm-dd, de acuerdo con la especificación ISO 8601.</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:date">
+                  <xs:whiteSpace value="collapse"/>
+                  <xs:pattern value="([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="Mes" use="required" type="catCEH:Meses">
+              <xs:annotation>
+                <xs:documentation>Atributo requerido para expresar el mes que corresponda al CFDI expedido por el operador del consorcio al FMP.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" use="required" fixed="1.0">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido que indica la versión del complemento.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="NumeroContrato" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el número de contrato asignado por la Comisión Nacional de Hidrocarburos con el cual se encuentra vinculado el ingreso.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:minLength value="1"/>
+            <xs:maxLength value="50"/>
+            <xs:whiteSpace value="collapse"/>
+            <xs:pattern value="[^|]{1,50}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ContraprestacionPagadaOperador" use="required" type="tdCFDI:t_Importe">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para precisar el importe total de las contraprestaciones pagadas al operador del consorcio.</xs:documentation>
+        </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="Porcentaje" use="required">
+        <xs:annotation>
+          <xs:documentation>Atributo requerido para expresar el porcentaje que ampara el CFDI que emite cada integrante del consorcio al operador, respecto del total de las contraprestaciones entregadas al operador del consorcio por el FMP.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="3"/>
+            <xs:minInclusive value="0.001"/>
+            <xs:maxInclusive value="100.000"/>
+            <xs:whiteSpace value="collapse"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
