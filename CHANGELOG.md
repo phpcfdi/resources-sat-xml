@@ -166,3 +166,7 @@ Actualización automática con fecha Tue 15 Mar 2022 09:00:36 PM CST
 ## 2022-03-31 phpcfdi/resources-sat-xml-generator:v1.2.0 
 
 Actualización automática con fecha Thu 31 Mar 2022 03:00:58 PM CST
+
+## 2022-05-24 phpcfdi/resources-sat-xml-generator:v1.2.0 
+
+Actualización automática con fecha Tue 24 May 2022 09:00:45 AM CDT
