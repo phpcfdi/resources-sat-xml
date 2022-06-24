@@ -62570,6 +62570,9 @@
 			<xs:enumeration value="ANC002/2022"/>
 			<xs:enumeration value="ANC005/2022"/>
 			<xs:enumeration value="ANC012/2022"/>
+			<xs:enumeration value="ANC019/2022"/>
+			<xs:enumeration value="ANC021/2022"/>
+			<xs:enumeration value="ANC022/2022"/>
 			<xs:enumeration value="ANC41/2021"/>
 			<xs:enumeration value="ANC49/2021"/>
 			<xs:enumeration value="ANC54/2021"/>
@@ -62585,6 +62588,9 @@
 			<xs:enumeration value="ANG014/2022"/>
 			<xs:enumeration value="ANG015/2022"/>
 			<xs:enumeration value="ANG016/2022"/>
+			<xs:enumeration value="ANG017/2022"/>
+			<xs:enumeration value="ANG018/2022"/>
+			<xs:enumeration value="ANG020/2022"/>
 			<xs:enumeration value="ANG39-2021"/>
 			<xs:enumeration value="ANG40-2021"/>
 			<xs:enumeration value="ANG42/2021"/>
