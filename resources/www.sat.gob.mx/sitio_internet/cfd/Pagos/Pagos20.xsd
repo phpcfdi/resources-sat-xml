@@ -249,12 +249,12 @@
 									</xs:attribute>
 									<xs:attribute name="EquivalenciaDR" use="optional">
 										<xs:annotation>
-											<xs:documentation>Atributo condicional para expresar el tipo de cambio conforme con la moneda registrada en el documento relacionado. Es requerido cuando la moneda del documento relacionado es distinta de la moneda de pago. Se debe registrar el número de unidades de la moneda señalada en el documento relacionado que equivalen a una unidad de la moneda del pago. Por ejemplo: El documento relacionado se registra en USD. El pago se realiza por 100 EUR. Este atributo se registra como 1.114700 USD/EUR. El importe pagado equivale a 100 EUR * 1.114700 USD/EUR = 111.47 USD.</xs:documentation>
+											<xs:documentation>Atributo condicional para expresar el tipo de cambio conforme con la moneda registrada en el documento relacionado. Es requerido cuando la moneda del documento relacionado es distinta de la moneda de pago. Se debe registrar el número de unidades de la moneda señalada en el documento relacionado que equivalen a una unidad de la moneda del pago. Por ejemplo: El documento relacionado se registra en USD. El pago se realiza por 100 EUR. Este atributo se registra como 1.0465711361 USD/EUR. El importe pagado equivale a 100 EUR * 1.0465711361 USD/EUR = 104.66 USD.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:decimal">
-												<xs:fractionDigits value="6"/>
-												<xs:minInclusive value="0.000001"/>
+												<xs:fractionDigits value="10"/>
+												<xs:minInclusive value="0.0000000001"/>
 												<xs:whiteSpace value="collapse"/>
 											</xs:restriction>
 										</xs:simpleType>
