@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:catCartaPorte="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/CartaPorte" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sat.gob.mx/sitio_internet/cfd/catalogos/CartaPorte" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="c_RegimenAduanero">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="IMD"/>
+			<xs:enumeration value="EXD"/>
+			<xs:enumeration value="ITR"/>
+			<xs:enumeration value="ITE"/>
+			<xs:enumeration value="ETR"/>
+			<xs:enumeration value="ETE"/>
+			<xs:enumeration value="DFI"/>
+			<xs:enumeration value="RFE"/>
+			<xs:enumeration value="RFS"/>
+			<xs:enumeration value="TRA"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="c_CveTransporte">
 		<xs:restriction base="xs:string">
 			<xs:whiteSpace value="collapse"/>
@@ -63760,6 +63775,96 @@
 			<xs:enumeration value="PT10"/>
 			<xs:enumeration value="PT11"/>
 			<xs:enumeration value="PT12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="c_DocumentoAduanero">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="c_TipoMateria">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="c_SectorCOFEPRIS">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="c_FormaFarmaceutica">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
+			<xs:enumeration value="07"/>
+			<xs:enumeration value="08"/>
+			<xs:enumeration value="09"/>
+			<xs:enumeration value="10"/>
+			<xs:enumeration value="11"/>
+			<xs:enumeration value="12"/>
+			<xs:enumeration value="13"/>
+			<xs:enumeration value="14"/>
+			<xs:enumeration value="15"/>
+			<xs:enumeration value="16"/>
+			<xs:enumeration value="17"/>
+			<xs:enumeration value="18"/>
+			<xs:enumeration value="19"/>
+			<xs:enumeration value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="c_CondicionesEspeciales">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="c_RegistroISTMO">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="01"/>
+			<xs:enumeration value="02"/>
+			<xs:enumeration value="03"/>
+			<xs:enumeration value="04"/>
+			<xs:enumeration value="05"/>
+			<xs:enumeration value="06"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
