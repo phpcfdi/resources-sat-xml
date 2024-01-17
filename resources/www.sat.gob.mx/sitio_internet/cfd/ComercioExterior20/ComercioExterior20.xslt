@@ -36,6 +36,9 @@
 
     <!--  Iniciamos el manejo de los elementos hijo en la secuencia -->
     <xsl:apply-templates select="./cce20:Emisor" />
+    <xsl:for-each select="./cce20:Propietario">
+			<xsl:apply-templates select="."/>
+    </xsl:for-each>
     <xsl:apply-templates select="./cce20:Receptor" />
     <xsl:for-each select="./cce20:Destinatario">
       <xsl:apply-templates select="."/>
