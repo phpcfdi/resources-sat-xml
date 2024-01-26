@@ -62580,6 +62580,7 @@
 			<xs:enumeration value="CM009"/>
 			<xs:enumeration value="CM010"/>
 			<xs:enumeration value="CM011"/>
+			<xs:enumeration value="CM012"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_NumAutorizacionNaviero">
@@ -62627,6 +62628,10 @@
 			<xs:enumeration value="ANC061/2023"/>
 			<xs:enumeration value="ANC062/2023"/>
 			<xs:enumeration value="ANC063/2023"/>
+			<xs:enumeration value="ANC071/2023"/>
+			<xs:enumeration value="ANC072/2023"/>
+			<xs:enumeration value="ANC073/2023"/>
+			<xs:enumeration value="ANC074/2023"/>
 			<xs:enumeration value="ANC41/2021"/>
 			<xs:enumeration value="ANC49/2021"/>
 			<xs:enumeration value="ANC54/2021"/>
@@ -62710,6 +62715,13 @@
 			<xs:enumeration value="ANG059/2023"/>
 			<xs:enumeration value="ANG064/2023"/>
 			<xs:enumeration value="ANG065/2023"/>
+			<xs:enumeration value="ANG066/2023"/>
+			<xs:enumeration value="ANG067/2023"/>
+			<xs:enumeration value="ANG068/2023"/>
+			<xs:enumeration value="ANG069/2023"/>
+			<xs:enumeration value="ANG070/2023"/>
+			<xs:enumeration value="ANG075/2023"/>
+			<xs:enumeration value="ANG076/2023"/>
 			<xs:enumeration value="ANG39-2021"/>
 			<xs:enumeration value="ANG40-2021"/>
 			<xs:enumeration value="ANG42/2021"/>
