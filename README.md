@@ -1,5 +1,9 @@
 # Recursos SAT XML
 
+[![Source Code][badge-source]][source]
+[![Discord][badge-discord]][discord]
+[![Build Status][badge-build]][build]
+
 Recursos de archivos XSD (XML Schema Definition) y XSLT (eXtensible Stylesheet Language) que el SAT [Servicio de Administración Tributaria (SAT)](http://www.sat.gob.mx/) en México ofrece para trabajar con CFDI (Comprobante Fiscal Digital por Internet).
 
 - Los archivos XSD son utilizados para validar los archivos XML de CFDI.
@@ -44,3 +48,11 @@ Estos recursos, a pesar de estar vinculados con una tecnología en su formato, n
 ## Licencia
 
 La información dentro de este repositorio debe ser considerada de *dominio público*, dado que es una recopilación de información pública generada por el [Servicio de Administración Tributaria (SAT)](https://www.sat.gob.mx/) de México. Debido a lo anterior, se establece este repositorio con la licencia [Unlicense](LICENSE).
+
+[source]: https://github.com/phpcfdi/resources-sat-xml
+[discord]: https://discord.gg/aFGYXvX
+[build]: https://www.phpcfdi.com/resources-app/build/sat-xml
+
+[badge-source]: https://img.shields.io/badge/source-phpcfdi/resources--sat--xml-blue?logo=github
+[badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord
+[badge-build]: https://img.shields.io/endpoint?url=https%3A%2F%2Fwww.phpcfdi.com%2Fresources-app%2Fapi%2Fv1%2Fbuilds%2Fsat-xml%2Fshields.io&logo=github-actions
