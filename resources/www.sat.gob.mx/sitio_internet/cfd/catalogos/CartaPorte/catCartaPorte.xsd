@@ -62595,6 +62595,8 @@
 			<xs:enumeration value="ANC005/2022"/>
 			<xs:enumeration value="ANC005/2023"/>
 			<xs:enumeration value="ANC005/2024"/>
+			<xs:enumeration value="ANC006/2024"/>
+			<xs:enumeration value="ANC007/2024"/>
 			<xs:enumeration value="ANC011/2022"/>
 			<xs:enumeration value="ANC012/2022"/>
 			<xs:enumeration value="ANC013/2023"/>
@@ -62654,6 +62656,7 @@
 			<xs:enumeration value="ANG007/2023"/>
 			<xs:enumeration value="ANG008/2022"/>
 			<xs:enumeration value="ANG008/2023"/>
+			<xs:enumeration value="ANG008/2024"/>
 			<xs:enumeration value="ANG009/2022"/>
 			<xs:enumeration value="ANG009/2023"/>
 			<xs:enumeration value="ANG010/2022"/>
@@ -63038,6 +63041,7 @@
 			<xs:enumeration value="SCT418/068/2018"/>
 			<xs:enumeration value="SCT418/069/2017"/>
 			<xs:enumeration value="SCT418/069/2018"/>
+			<xs:enumeration value="NAVMX-2024"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_CodigoTransporteAereo">
