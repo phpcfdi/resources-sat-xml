@@ -29,7 +29,7 @@
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:short">
-									<xs:minInclusive value="2021"/>
+									<xs:minInclusive value="2019"/>
 									<xs:whiteSpace value="collapse"/>
 								</xs:restriction>
 							</xs:simpleType>

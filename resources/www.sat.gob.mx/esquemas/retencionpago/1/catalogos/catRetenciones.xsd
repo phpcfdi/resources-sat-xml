@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:c_retenciones="http://www.sat.gob.mx/esquemas/retencionpago/1/catalogos" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.sat.gob.mx/esquemas/retencionpago/1/catalogos" elementFormDefault="unqualified" attributeFormDefault="unqualified">
-    <xs:simpleType name="c_Retenciones">
+	<xs:simpleType name="c_Retenciones">
 		<xs:restriction base="xs:string">
 			<xs:whiteSpace value="collapse"/>
 			<xs:enumeration value="01"/>
@@ -30,7 +30,7 @@
 			<xs:enumeration value="25"/>
 			<xs:enumeration value="26"/>
 		</xs:restriction>
-	</xs:simpleType>	
+	</xs:simpleType>
 	<xs:simpleType name="c_CveRetenc">
 		<xs:restriction base="xs:string">
 			<xs:whiteSpace value="collapse"/>
@@ -416,6 +416,8 @@
 	<xs:simpleType name="c_Ejercicio">
 		<xs:restriction base="xs:string">
 			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="2019"/>
+			<xs:enumeration value="2020"/>
 			<xs:enumeration value="2021"/>
 			<xs:enumeration value="2022"/>
 			<xs:enumeration value="2023"/>
