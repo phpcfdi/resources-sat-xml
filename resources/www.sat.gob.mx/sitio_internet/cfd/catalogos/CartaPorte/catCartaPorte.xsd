@@ -62656,6 +62656,7 @@
 			<xs:enumeration value="ANC011/2022"/>
 			<xs:enumeration value="ANC012/2022"/>
 			<xs:enumeration value="ANC013/2023"/>
+			<xs:enumeration value="ANC016/2023"/>
 			<xs:enumeration value="ANC019/2022"/>
 			<xs:enumeration value="ANC021/2022"/>
 			<xs:enumeration value="ANC022/2022"/>
@@ -62698,6 +62699,7 @@
 			<xs:enumeration value="ANC073/2023"/>
 			<xs:enumeration value="ANC074/2023"/>
 			<xs:enumeration value="ANC41/2021"/>
+			<xs:enumeration value="ANC47/2021"/>
 			<xs:enumeration value="ANC49/2021"/>
 			<xs:enumeration value="ANC54/2021"/>
 			<xs:enumeration value="ANC58/2021"/>
@@ -62706,6 +62708,8 @@
 			<xs:enumeration value="ANG003/2022"/>
 			<xs:enumeration value="ANG004/2022"/>
 			<xs:enumeration value="ANG004/2024"/>
+			<xs:enumeration value="ANG005/2022"/>
+			<xs:enumeration value="ANG005/2023"/>
 			<xs:enumeration value="ANG006/2022"/>
 			<xs:enumeration value="ANG006/2023"/>
 			<xs:enumeration value="ANG006/2024"/>
@@ -62753,23 +62757,31 @@
 			<xs:enumeration value="ANG022/2024"/>
 			<xs:enumeration value="ANG023/2022"/>
 			<xs:enumeration value="ANG023/2023"/>
+			<xs:enumeration value="ANG023/2024"/>
 			<xs:enumeration value="ANG024/2022"/>
 			<xs:enumeration value="ANG024/2023"/>
+			<xs:enumeration value="ANG024/2024"/>
 			<xs:enumeration value="ANG025/2022"/>
 			<xs:enumeration value="ANG026/2022"/>
 			<xs:enumeration value="ANG026/2023"/>
+			<xs:enumeration value="ANG026/2024"/>
+			<xs:enumeration value="ANG027/2024"/>
+			<xs:enumeration value="ANG028/2024"/>
 			<xs:enumeration value="ANG030/2022"/>
 			<xs:enumeration value="ANG030/2023"/>
 			<xs:enumeration value="ANG031/2022"/>
 			<xs:enumeration value="ANG031/2023"/>
 			<xs:enumeration value="ANG033/2022"/>
 			<xs:enumeration value="ANG034/2022"/>
+			<xs:enumeration value="ANG034/2023"/>
+			<xs:enumeration value="ANG035/2023"/>
 			<xs:enumeration value="ANG036/2022"/>
 			<xs:enumeration value="ANG037/2022"/>
 			<xs:enumeration value="ANG039/2022"/>
 			<xs:enumeration value="ANG039/2023"/>
 			<xs:enumeration value="ANG040/2022"/>
 			<xs:enumeration value="ANG040/2023"/>
+			<xs:enumeration value="ANG041/2022"/>
 			<xs:enumeration value="ANG042/2022"/>
 			<xs:enumeration value="ANG043/2022"/>
 			<xs:enumeration value="ANG043/2023"/>
@@ -63278,6 +63290,19 @@
 			<xs:enumeration value="CA158"/>
 			<xs:enumeration value="CA159"/>
 			<xs:enumeration value="CA160"/>
+			<xs:enumeration value="CA161"/>
+			<xs:enumeration value="CA162"/>
+			<xs:enumeration value="CA163"/>
+			<xs:enumeration value="CA164"/>
+			<xs:enumeration value="CA165"/>
+			<xs:enumeration value="CA166"/>
+			<xs:enumeration value="CA167"/>
+			<xs:enumeration value="CA168"/>
+			<xs:enumeration value="CA169"/>
+			<xs:enumeration value="CA170"/>
+			<xs:enumeration value="CA171"/>
+			<xs:enumeration value="CA172"/>
+			<xs:enumeration value="CA173"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_ClaveProdSTCC">
