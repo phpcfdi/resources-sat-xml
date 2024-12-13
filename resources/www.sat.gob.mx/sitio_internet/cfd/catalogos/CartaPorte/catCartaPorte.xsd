@@ -62767,10 +62767,13 @@
 			<xs:enumeration value="ANG026/2024"/>
 			<xs:enumeration value="ANG027/2024"/>
 			<xs:enumeration value="ANG028/2024"/>
+			<xs:enumeration value="ANG029/2024"/>
 			<xs:enumeration value="ANG030/2022"/>
 			<xs:enumeration value="ANG030/2023"/>
+			<xs:enumeration value="ANG030/2024"/>
 			<xs:enumeration value="ANG031/2022"/>
 			<xs:enumeration value="ANG031/2023"/>
+			<xs:enumeration value="ANG031/2024"/>
 			<xs:enumeration value="ANG033/2022"/>
 			<xs:enumeration value="ANG034/2022"/>
 			<xs:enumeration value="ANG034/2023"/>
