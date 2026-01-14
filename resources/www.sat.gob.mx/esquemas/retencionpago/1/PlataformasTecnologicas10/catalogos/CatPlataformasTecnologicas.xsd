@@ -12,7 +12,6 @@
 			<xs:enumeration value="07"/>
 			<xs:enumeration value="08"/>
 			<xs:enumeration value="09"/>
-			<xs:enumeration value="10"/>
 			<xs:enumeration value="11"/>
 		</xs:restriction>
 	</xs:simpleType>
@@ -23,9 +22,6 @@
 			<xs:enumeration value="02"/>
 			<xs:enumeration value="03"/>
 			<xs:enumeration value="04"/>
-			<xs:enumeration value="05"/>
-			<xs:enumeration value="06"/>
-			<xs:enumeration value="07"/>
 			<xs:enumeration value="08"/>
 			<xs:enumeration value="09"/>
 		</xs:restriction>
