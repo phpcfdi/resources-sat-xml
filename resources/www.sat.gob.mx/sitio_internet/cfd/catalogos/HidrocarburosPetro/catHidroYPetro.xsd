@@ -11,6 +11,9 @@
 			<xs:enumeration value="PER06"/>
 			<xs:enumeration value="PER07"/>
 			<xs:enumeration value="PER08"/>
+			<xs:enumeration value="PER09"/>
+			<xs:enumeration value="PER10"/>
+			<xs:enumeration value="PER11"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_ClaveHYP">
