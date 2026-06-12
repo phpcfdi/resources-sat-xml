@@ -267,6 +267,8 @@
 			<xs:enumeration value="111"/>
 			<xs:enumeration value="112"/>
 			<xs:enumeration value="113"/>
+			<xs:enumeration value="114"/>
+			<xs:enumeration value="115"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_TipoHoras">
@@ -372,6 +374,7 @@
 			<xs:enumeration value="054"/>
 			<xs:enumeration value="055"/>
 			<xs:enumeration value="056"/>
+			<xs:enumeration value="057"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="c_TipoRegimen">

@@ -346,3 +346,7 @@ Actualización automática con fecha Sun Apr  5 09:00:17 AM CST 2026.
 ## 2026-04-18 phpcfdi/resources-sat-xml-generator:v3.0.3 
 
 Actualización automática con fecha Sat Apr 18 10:29:25 AM CST 2026.
+
+## 2026-06-11 phpcfdi/resources-sat-xml-generator:v3.0.3 
+
+Actualización automática con fecha Thu Jun 11 09:00:27 PM CST 2026.
